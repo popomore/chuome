@@ -11,7 +11,7 @@ group=popomore
 function start {
 	pid=`cat $piddir`
 	if [ "$pid" == "" ]; then
-		/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -u $user -g $group -f /usr/bin/php5-cgi -P $piddir
+		/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -C 2 -u $user -g $group -f /usr/bin/php5-cgi -P $piddir
 	else
 		echo "spawn-fcgi: now is running"	
 	fi
@@ -22,7 +22,7 @@ function stop {
 	if [ "$pid" == "" ];then
 		echo "spawn-fcgi: no running"	
 	else
-		kill -9 $pid
+		killall php5-cgi
 		echo "spawn-fcgi: $pid was killed"
 		echo -n "" > $piddir
 	fi
