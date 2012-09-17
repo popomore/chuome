@@ -1,0 +1,14 @@
+<header>
+    <a href="/rss.xml" class="rss">
+        <img src="/static/rss.png" alt="rss">
+    </a>
+    <a class="logo" href="/">
+        <img src="/static/logo.png" alt="chuo.me" />
+    </a>
+    <nav id="nav" role="navigation">
+        {% for item in theme.navigation %}
+
+        <a href="{{item.link}}">{{item.title}}</a>
+        {%- endfor %}
+    </nav>
+</header>

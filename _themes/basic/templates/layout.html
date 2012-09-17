@@ -1,63 +1,78 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <title>{{site.name}}</title>
-        <link rel="stylesheet" href="{{static_url('main.css')}}" type="text/css" media="screen" charset="utf-8" />
-        {% if site.feed -%}
-        <link rel="alternate" type="application/rss+xml" href="{{site.feed}}" title="{{site.name}}" />
-        {% else %}
-        <link rel="alternate" type="application/rss+xml" href="{{ content_url('feed.xml') }}" title="{{site.name}}" />
-        {%- endif %}
-        <!--[if lt IE 9]>
-        <script type="text/javascript" src="{{static_url('html5shiv.js')}}"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <header>
-            <a href="/rss.xml" class="rss">
-                <img src="/static/rss.png" alt="rss">
-            </a>
-            <a class="logo" href="/">
-                <img src="/static/logo.png" alt="chuo.me" />
-            </a>
-            <nav id="nav" role="navigation">
-                {% for item in theme.navigation %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>{{site.name}}</title>
+    <link rel="stylesheet" href="{{static_url('main.css')}}" type="text/css" media="screen" charset="utf-8" />
+    {% if site.feed -%}
+    <link rel="alternate" type="application/rss+xml" href="{{site.feed}}" title="{{site.name}}" />
+    {% else %}
+    <link rel="alternate" type="application/rss+xml" href="{{content_url('feed.xml')}}" title="{{site.name}}" />
+    {%- endif %}
+    <script src="https://a.alipayobjects.com/static/arale/seajs/1.2.1/sea.js" id="seajsnode"></script>
+    <script>
+    seajs.config({
+        alias: {
+            '$': 'jquery/1.7.2/jquery'
+        }
+    });
+    </script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="{{static_url('html5shiv.js')}}"></script>
+    <style>
+    .notice{
+        padding: 3px 0;
+        text-align: center;
+        background: #BF0000;
+        color: #fff;
+    }
+    .notice a{
+        color: #fff;
+    }
+    </style>
+    <script>
+    seajs.use('$', function($) {
+        $(function(){
+            $('<div></div>')
+                .html(
+                    '您的浏览器为 IE' + $.browser.version + '，请升级到高级浏览器。' +
+                    '<a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank">chrome</a> / ' +
+                    '<a href="http://firefox.com.cn/" target="_blank">firefox</a> / ' +
+                    '<a href="http://windows.microsoft.com/zh-CN/internet-explorer/downloads/ie" target="_blank">IE9</a>,'
+                )
+                .addClass('notice')
+                .prependTo(document.body)
+                .hide()
+                .fadeIn(2000);
+        });
+    });
+    </script>
+    <![endif]-->
+</head>
+<body>
 
-                <a href="{{item.link}}">{{item.title}}</a>
-                {%- endfor %}
-            </nav>
-        </header>
+    {%- block head %}
+        {% include 'head.html' %}
+    {% endblock -%}
 
-        {%- block main %}
-        {% endblock -%}
+    {%- block main %}
+    {% endblock -%}
 
-        <footer>
-            <ul class="links">
-                <li><a href="https://github.com/popomore/" target="_blank">Github</a></li>
-                <li><a href="http://twitter.com/popomore/" target="_blank">Twitter</a></li>
-                <li><a href="http://flickr.com/popomore/" target="_blank">Flickr</a></li>
-            </ul>
-            <div class="copyright">
-            © 2008-2012 <a href="http://chuo.me/" title="不要变笨 | Don&#039;t to be stupid" rel="home" target="_blank">chuo.me</a> All Rights Reserved<br/>
-            Powered by <a href="http://project.lepture.com/liquidluck/" target="_blank">Felix Felicis</a>, 
-            Owned by <a href="http://twitter.com" target="_blank">popomore</a>, 
-            </div>
-        </footer>
+    {%- block foot %}
+        {% include 'foot.html' %}
+    {% endblock -%}
 
-        <script type="text/javascript">
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-5515443-4']);
-          _gaq.push(['_trackPageview']);
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        </script>
-    </body>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-5515443-4']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</body>
 </html>
-
-

@@ -1,23 +1,113 @@
 {% extends "layout.html" %}
 
-{% block main -%}
-<div class="container">
-    <div class="posts">
-	{% set posts = resource.posts[:5] -%}
-    {% for item in posts %}
-        <div class="post-date">{{ item.date.strftime('%Y.%m.%d') }}</div>
-        <hr class="post-hr"></hr>
-
-        <div class="post markdown">
-            <h1><a href="{{item|permalink}}">{{item.title}}</a></h1>
-			{{ item.content }}
-        </div>
-    {% endfor %}
+{% block head -%}
+<style>
+html,body{
+    height:100%;
+    min-height:500px;
+}
+.danbo {
+    display: block;
+    position: relative;	
+    background: #E2B21A;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+.danbo-eye{
+    display: block;
+    position: absolute;
+    width: 12%;
+    height: 18%;
+    background: #000;
+    border-radius: 100%;
+    top: 30%;
+}
+.danbo-lefteye{
+    left: 25%;	
+}
+.danbo-righteye{
+    right:25%;
+}
+.danbo-mouth{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    width: 0;
+    height: 0;
+}
+.danbo-512{
+    width: 512px;
+    height: 288px;
+}
+.danbo-512 .danbo-mouth{
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    border-bottom: 48px solid black;
+    margin-left: -32px;
+}
+.index{
+    position:relative;
+    margin: 0 auto;
+    width: 800px;
+    padding:20px 0;
+}
+.index-links{
+    text-align:center;
+    padding-top: 30px;
+}
+.index-links a{
+    font-size:30px;
+    margin-right:25px;
+}
+.index-links a:last-child{
+    margin-right:0;
+}
+.index-links a:hover{
+    text-decoration:none;
+    border-bottom: 5px solid #BF0000;
+    color:#BF0000;
+}
+.index-logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+.copyright{
+    text-align: center;
+}
+</style>
+<div class="index">
+    <div class="index-logo">
+        <a class="logo" href="/">
+            <img src="/static/logo.png" alt="chuo.me" />
+        </a>
     </div>
 
-    <div style="text-align:center;">
-        <a href="/archive/" style="font-size:20px;">查看更多</a>
+    <div class="danbo-ctn">
+        <div class="danbo danbo-512">
+            <span class="danbo-eye danbo-lefteye"></span>
+            <span class="danbo-eye danbo-righteye"></span>
+            <span class="danbo-mouth"></span>
+        </div>
+
+
+    </div>
+    <div class="index-links">
+        <a href="/archive/">Archive</a>
+        <!--<a href="/doc/">Document</a>-->
+        <a href="/about/">About</a>
+        <!--<a href="/resume/">Résumé</a>-->
     </div>
 </div>
 {%- endblock %}
 
+
+{% block foot -%}
+<footer>
+    <div class="copyright">
+        © 2008-2012 <a href="http://chuo.me/" title="不要变笨 | Don&#039;t to be stupid" rel="home" target="_blank">chuo.me</a> All Rights Reserved<br/>
+        Powered by <a href="http://project.lepture.com/liquidluck/" target="_blank">Felix Felicis</a>, 
+        Owned by <a href="http://twitter.com" target="_blank">popomore</a>, 
+    </div>
+</footer>
+{%- endblock %}
