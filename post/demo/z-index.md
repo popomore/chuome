@@ -93,7 +93,7 @@ z-index:-1 可以隐藏
     3 z-index:1
 </div>
 
-# 7. 复杂一点的场景
+## 7. 复杂一点的场景
 
 <div style="position:relative;width:600px;height:600px;z-index:1;" class="block color1">
     1 z-index:1
