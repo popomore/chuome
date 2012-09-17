@@ -4,41 +4,27 @@
 #
 
 server {
-	listen   80 default;
-	server_name  chuo.me;
-	root   /home/popomore/site/chuome;
+    listen 80;
+    server_name chuo.me;
+    root   /home/popomore/site/chuome/_site;
 
-	access_log  /home/popomore/log/chuo.me.access.log;
-	error_log  /home/popomore/log/chuo.me.error.log;
+    #ssl_certificate /etc/nginx/server.crt;
+    #ssl_certificate_key /etc/nginx/server.key;
 
-	location / {
-		index index.php;
-		
-		if (!-e $request_filename){
-			rewrite ^(.+)$ /index.php?q=$1 last;
-		}
-	}
+    access_log  /home/popomore/log/chuo.me.access.log;
+    error_log  /home/popomore/log/chuo.me.error.log;
 
-	location = /favicon.ico {
-		log_not_found off;
-		access_log off;
-	}
+    location / {
+        index index.html;
+    }
 
-	# Deny access to any files with a .php extension in the uploads directory
-	location ~* ^/wp-content/uploads/.*.php$ {
-		deny all;
-		access_log off;
-		log_not_found off;
-	}
+    location = /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
 
-	location ~ \.php$ {
-		fastcgi_pass   127.0.0.1:9000;
-		fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-		include fastcgi_params;
-	}
-
-	location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-		expires max;
-		log_not_found off;
-	}
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+        expires max;
+        log_not_found off;
+    }
 }
