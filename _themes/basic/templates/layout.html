@@ -11,6 +11,9 @@
         {% else %}
         <link rel="alternate" type="application/rss+xml" href="{{ content_url('feed.xml') }}" title="{{site.name}}" />
         {%- endif %}
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="{{static_url('html5shiv.js')}}"></script>
+        <![endif]-->
     </head>
     <body>
         <header>
