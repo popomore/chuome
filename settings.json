@@ -1,0 +1,62 @@
+{
+  "site": {
+    "name": "不要变笨",
+    "url": "http://chuo.me"
+  },
+
+  "config": {
+    "source": "post",
+    "output": "_site",
+    "static": "_site/static",
+    "static_prefix": "/static/",
+    "permalink": "{{date.year}}/{{date.month}}/{{filename}}.html",
+    "relative_url": false,
+    "perpage": 30,
+    "feedcount": 20,
+    "timezone": "+08:00"
+  },
+
+
+  "author": {
+    "default": "popomore",
+    "vars": {}
+  },
+
+  "reader": {
+    "active": [
+      "liquidluck.readers.markdown.MarkdownReader"
+    ],
+    "vars": {}
+  },
+
+  "writer": {
+    "active": [
+      "liquidluck.writers.core.PostWriter",
+      "liquidluck.writers.core.PageWriter",
+      "liquidluck.writers.core.ArchiveWriter",
+      "liquidluck.writers.core.ArchiveFeedWriter",
+      "liquidluck.writers.core.FileWriter",
+      "liquidluck.writers.core.StaticWriter",
+      "liquidluck.writers.core.YearWriter",
+      "liquidluck.writers.core.CategoryWriter",
+      "liquidluck.writers.core.CategoryFeedWriter",
+      "liquidluck.writers.core.TagWriter",
+      "liquidluck.writers.core.TagCloudWriter"
+    ],
+    "vars": {
+	  "archive_output": "archive/index.html"
+    }
+  },
+
+  "theme": {
+    "name": "basic",
+
+    "vars": {
+    }
+  },
+
+  "template": {
+    "vars": {},
+    "filters": {}
+  }
+}

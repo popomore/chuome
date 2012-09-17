@@ -1,0 +1,388 @@
+@charset "utf-8";
+/*
+ * borrowed from typo
+ * https://github.com/sofish/typo.css 
+ * */
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    color: #333;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, group, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+    display: inline-block;
+             *display: inline;
+             *zoom: 1;
+         }
+
+         /* 要注意表单元素并不继承父级 font 的问题 */
+         body, button, input, select, textarea {
+             font: 16px/1.5 "Rosario", "Xin Gothic", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif
+         }
+
+         input, select, textarea {
+             font-size: 1em;
+         }
+
+         /* 去掉各Table  cell 的边距并让其边重合 */
+         table {
+             border-collapse: collapse;
+             border-spacing: 0;
+         }
+
+         /* IE bug fixed: th 不继承 text-align*/
+         th {
+             text-align: inherit;
+         }
+
+         /* 去除默认边框 */
+         fieldset, img {
+             border: 0;
+         }
+
+         /* ie6 7 8(q) bug 显示为行内表现 */
+         iframe {
+             display: block;
+         }
+
+         /* 块/段落引用 */
+         blockquote {
+             margin: 1em 4em 1em 2em;
+             padding: 0.6em 1em;
+             background: #f1f1f1;
+         }
+         blockquote blockquote {
+             padding: 0 0 0 1em;
+             margin-left: 2em;
+             border-left: 0.4em solid #ddd;
+         }
+
+         /* Firefox 以外，元素没有下划线，需添加 */
+         acronym, abbr {
+             border-bottom: 1px dotted;
+             font-variant: normal;
+         }
+
+         /* 添加鼠标问号，进一步确保应用的语义是正确的（要知道，交互他们也有洁癖，如果你不去掉，那得多花点口舌） */
+         abbr {
+             cursor: help;
+         }
+
+         /* 一致的 del 样式 */
+         del {
+             text-decoration: line-through;
+         }
+
+         address, caption, cite, code, den, em, th, var {
+             font-style: normal;
+             font-weight: 500;
+         }
+
+         /* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+         ul, ol {
+             list-style: none;
+         }
+
+         /* 对齐是排版最重要的因素, 别让什么都居中 */
+         caption, th {
+             text-align: left;
+         }
+
+         /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+         h1, h2, h3, h4, h5, h6 {
+             font: 100%/1 Verdana, sans-serif;
+         }
+
+         q:before, q:after {
+             content: '';
+         }
+
+         /* 统一上标和下标 */
+         sub, sup {
+             font-size: 75%;
+             line-height: 0;
+             position: relative;
+             vertical-align: baseline;
+         }
+         sup {
+             top: -0.5em;
+         }
+         sub {
+             bottom: -0.25em;
+         }
+
+         /* 让链接在 hover 状态下显示下划线 */
+         a:hover {
+             text-decoration: underline;
+         }
+
+         /* 默认不显示下划线，保持页面简洁 */
+         ins, a {
+             text-decoration: none;
+         }
+
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark {
+    background: #fffdd1;
+}
+
+
+/* 清理浮动 */
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.markdown {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.markdown h1, 
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin: 20px 0 10px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+.markdown h1 { margin-top: 0; padding-top: 0; font-size: 240%; }
+.markdown h2 { font-size: 180%; }
+.markdown h3 { font-size: 150%; }
+.markdown h4 { font-size: 130%; }
+.markdown h5 { font-size: 100%; }
+.markdown h6 { font-size: 100%; }
+
+.markdown h1 {
+  padding-bottom: 10px;
+border-bottom: 5px solid #CCC;
+  color: black; }
+
+  h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+.markdown p,
+.markdown blockquote,
+.markdown ul,
+.markdown ol,
+.markdown dl,
+.markdown li,
+.markdown table,
+.markdown pre {
+margin: 15px 0; }
+
+.markdown hr {
+    background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+    border: 0 none;
+    color: #cccccc;
+    height: 4px;
+padding: 0; }
+
+
+.markdown li p.first {
+display: inline-block; }
+
+.markdown ul{
+    list-style-type: disc;
+}
+.markdown ol{
+    list-style-type: decimal;
+}
+.markdown ul,.markdown  ol {
+padding-left: 30px; }
+
+.markdown ul :first-child,.markdown  ol :first-child {
+margin-top: 0; }
+
+.markdown ul :last-child, .markdown ol :last-child {
+margin-bottom: 0; }
+
+.markdown dl {
+padding: 0; }
+.markdown dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+margin: 15px 0 5px; }
+.markdown dl dt:first-child {
+padding: 0; }
+.markdown dl dt > :first-child {
+margin-top: 0; }
+.markdown dl dt > :last-child {
+margin-bottom: 0; }
+.markdown dl dd {
+    margin: 0 0 15px;
+padding: 0 15px; }
+.markdown dl dd > :first-child {
+margin-top: 0; }
+.markdown dl dd > :last-child {
+margin-bottom: 0; }
+
+.markdown blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+color: #777777; }
+.markdown blockquote > :first-child {
+margin-top: 0; }
+.markdown blockquote > :last-child {
+margin-bottom: 0; }
+
+.markdown table {
+padding: 0;border-collapse: collapse; }
+.markdown table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+padding: 0; }
+.markdown table tr:nth-child(2n) {
+background-color: #f8f8f8; }
+.markdown table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+padding: 6px 13px; }
+.markdown table tr td {
+    text-align: left;
+    margin: 0;
+padding: 6px 13px; }
+.markdown table tr th :first-child, .markdown table tr td :first-child {
+margin-top: 0; }
+.markdown table tr th :last-child, .markdown table tr td :last-child {
+margin-bottom: 0; }
+
+.markdown img {
+max-width: 100%; }
+
+.markdown code, .markdown tt {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+border-radius: 3px; }
+
+.markdown pre code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+background: transparent; }
+
+.markdown .highlight pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+border-radius: 3px; }
+
+.markdown pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+border-radius: 3px; }
+.markdown pre code,.markdown pre tt {
+    background-color: transparent;
+border: none; }
+
+.markdown a, .markdown a:hover{color:#BF0000;}
+
+
+/* Layout */
+body{background:#f6f6f6;}
+html, body{min-height:700px;}
+a,a:hover{color:#666;}
+::selection{color: #FFD;background:#DB6E00;}
+
+/* 头部样式 */
+header{position: relative;width: 990px;margin: 0 auto;padding-bottom: 80px;}
+header .logo{position: absolute;left: 0;top: 24px;}
+header .rss{position: absolute;left: -30px;top: 12px;}
+header .back{position: absolute;top: 50px;font-size: 20px;}
+
+#nav {position:absolute;right:0;}
+#nav a{
+    float: right;
+margin-left: 25px;
+display: block;
+font-size: 25px;
+border-top: 5px solid #F6F6F6;
+}
+#nav a:hover{border-top-color:#BF0000;color:#BF0000;text-decoration:none;}
+
+/* 内容样式 */
+.container{position:relative;padding: 20px 0;width:990px;margin:0 auto;background: white;border: 2px solid #999;border-radius: 5px;box-shadow: 0 0 30px #BBB;}
+.container article{margin:0 40px;}
+article .datetime{position:absolute;right:30px;top:-20px;color:#ddd;font-size:50px;font-family:Georgia;font-style: italic;}
+
+/* 底部样式 */
+footer{width:990px; margin:0 auto;padding: 20px 0;}
+footer, footer a, footer a:hover{color:#999;}
+footer a{text-decoration:underline;}
+.links{float: right; }
+.links li{float: right; margin-left: 20px;}
+.links a{font-size: 20px;}
+
+/* 排版新增 */
+.markdown img{-webkit-box-shadow: 5px 5px 5px #ccc;-moz-box-shadow: 5px 5px 5px #ccc;box-shadow: 5px 5px 5px #ccc;border:2px solid white;}
+.markdown img:hover{-webkit-transform: rotate(1deg);-moz-transform: rotate(1deg);}
+
+/* 首页 */
+.container .posts{padding: 15px 40px 0;}
+.container .posts-item{margin:15px 0;font-size: 20px;}
+.container .posts .datetime{color:#999;margin-right:30px;}
+.container .post-date{position:relative;color:#bbb;background: white;
+font-size: 30px;
+width: 200px;
+text-align: center;
+margin: 0 auto -24px;}
+.container .post{margin-bottom:80px;}
+.container .post-hr{margin-bottom:80px;border: 1px solid #BBB;}
+
+.navigation{font-family:'Courier New';font-size:30px;color:#3a3a3a;text-align:center;}
+.navigation a{color:#3a3a3a;text-decoration:none;}
+.navigation .nav-previous{margin-right:50px;}

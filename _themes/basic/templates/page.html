@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main -%}
+<div class="container">
+    <article class="markdown">
+    <h1>{{ post.title }}</h1>
+    {{ post.content }}
+
+    {% if theme.disqus -%}
+    {%- if theme.allow_comment_on_secret_post or post.public %}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = '{{theme.disqus}}';
+        var disqus_title = '{{post.title}}';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    {% endif -%}
+    {%- endif %}
+    </article>
+    </article>
+</div>
+{%- endblock %}

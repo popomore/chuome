@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main -%}
+<div class="container">
+    <div class="posts">
+	{% set posts = resource.posts[:5] -%}
+    {% for item in posts %}
+        <div class="post-date">{{ item.date.strftime('%Y.%m.%d') }}</div>
+        <hr class="post-hr"></hr>
+
+        <div class="post markdown">
+            <h1><a href="{{item|permalink}}">{{item.title}}</a></h1>
+			{{ item.content }}
+        </div>
+    {% endfor %}
+    </div>
+
+    <div style="text-align:center;">
+        <a href="/archive/" style="font-size:20px;">查看更多</a>
+    </div>
+</div>
+{%- endblock %}
+

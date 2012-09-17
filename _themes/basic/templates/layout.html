@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <title>{{site.name}}</title>
+        <link rel="stylesheet" href="{{static_url('main.css')}}" type="text/css" media="screen" charset="utf-8" />
+        {% if site.feed -%}
+        <link rel="alternate" type="application/rss+xml" href="{{site.feed}}" title="{{site.name}}" />
+        {% else %}
+        <link rel="alternate" type="application/rss+xml" href="{{ content_url('feed.xml') }}" title="{{site.name}}" />
+        {%- endif %}
+    </head>
+    <body>
+        <header>
+            <a href="/rss.xml" class="rss">
+                <img src="/static/rss.png" alt="rss">
+            </a>
+            <a class="logo" href="/">
+                <img src="/static/logo.png" alt="chuo.me" />
+            </a>
+            <nav id="nav" role="navigation">
+                {% for item in theme.navigation %}
+
+                <a href="{{item.link}}">{{item.title}}</a>
+                {%- endfor %}
+            </nav>
+        </header>
+
+        {%- block main %}
+        {% endblock -%}
+
+        <footer>
+            <ul class="links">
+                <li><a href="https://github.com/popomore/" target="_blank">Github</a></li>
+                <li><a href="http://twitter.com/popomore/" target="_blank">Twitter</a></li>
+                <li><a href="http://flickr.com/popomore/" target="_blank">Flickr</a></li>
+            </ul>
+            <div class="copyright">
+            © 2008-2012 <a href="http://chuo.me/" title="不要变笨 | Don&#039;t to be stupid" rel="home" target="_blank">chuo.me</a> All Rights Reserved<br/>
+            Powered by <a href="http://project.lepture.com/liquidluck/" target="_blank">Felix Felicis</a>, 
+            Owned by <a href="http://twitter.com" target="_blank">popomore</a>, 
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-5515443-4']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+    </body>
+</html>
+
+
