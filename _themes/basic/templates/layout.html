@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <title>{{site.name}}</title>
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <title>{% block title %}{{site.name}}{% endblock %}</title>
     <link rel="stylesheet" href="{{static_url('main.css')}}" type="text/css" media="screen" charset="utf-8" />
     {% if site.feed -%}
     <link rel="alternate" type="application/rss+xml" href="{{site.feed}}" title="{{site.name}}" />
