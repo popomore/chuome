@@ -19,8 +19,10 @@
 ```
 #!/usr/bin/env python
 import hashlib
-print(“fiona%s”%hashlib.md5(“这里替换为你的设备序列号”.encode(‘utf-8′)).hexdigest()[7:11])
+print(“fiona%s”%hashlib.md5(“这里替换为你的设备序列号\n”.encode(‘utf-8′)).hexdigest()[7:11])
 ```
+
+可以直接到这个网站 http://members.ping.de/~sven/kindle.html
 
 ### 2. 进入调试模式
 
