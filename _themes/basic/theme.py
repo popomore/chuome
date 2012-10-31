@@ -3,7 +3,7 @@
 
 name = 'basic'
 version = '0.7'
-website = 'doc.chuo.me'
+website = 'chuo.me'
 author = {
     'name': 'popomore',
     'website': 'http://chuo.me',
@@ -15,7 +15,7 @@ navigation = [
 ]
 
 reveal = {
-    'style': 'simple'
+    'style': 'default'
 }
 
 show_author = False
