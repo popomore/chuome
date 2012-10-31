@@ -14,6 +14,10 @@ navigation = [
     {'title': 'Archive', 'link': '/archive/'},
 ]
 
+reveal = {
+    'style': 'simple'
+}
+
 show_author = False
 tagcloud = False
 
