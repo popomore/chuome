@@ -19,7 +19,7 @@
 ZSH_THEME="popomore"
 ```
 
-在 ~/.oh-my-zsh/themes 添加样式文件 popomore.zsh-theme。终端的展现是通过 PROMPT 设置的，如果想在右边展现可设置 RPROMPT。下面是 PROMPT 的可选值
+在 ~/.oh-my-zsh/themes 添加样式文件 popomore.zsh-theme。终端的展现是通过 PROMPT 设置的，如果想在右边展现可设置 RPROMPT。下面是 PROMPT 的可选值
 
 ```
 General
@@ -68,7 +68,7 @@ PROMPT='(%{$fg[red]%}%n%{$reset_color%})'
 ## 配置插件
 
 
-oh-my-zsh 的插件存放在 ~/.oh-my-zsh/plugins 下，里面有很多插件，扫了圈发现能用的并不多。 在 ~/.zshrc 配置 git 插件
+oh-my-zsh 的插件存放在 ~/.oh-my-zsh/plugins 下，里面有很多插件，扫了圈发现能用的并不多。 在 ~/.zshrc 配置 git 插件
 
 ```
 plugins=(git)
