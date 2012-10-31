@@ -11,4 +11,4 @@
 
 星座电台可能是一道小菜，更加期待好友电台，不过没好友怎么办？虾米还有一个“[下一个虾米FM电台，由你设计！](http://www.xiami.com/group/thread-detail/tid/4209)”的活动，有什么想法可以去提提。我还是喜欢last的电台。
 
-[![](http://1.bp.blogspot.com/_ixQDXDmMsfA/SWcIFgtFAuI/AAAAAAAAASM/UogELV--Liw/s400/Screenshot1.png)](http://1.bp.blogspot.com/_ixQDXDmMsfA/SWcIFgtFAuI/AAAAAAAAASM/UogELV--Liw/s1600-h/Screenshot1.png)
+![](../../uploads/blogger/Screenshot1.png)
