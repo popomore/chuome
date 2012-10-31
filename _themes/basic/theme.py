@@ -3,7 +3,7 @@
 
 name = 'basic'
 version = '0.7'
-website = 'doc.chuo.me'
+website = 'chuo.me'
 author = {
     'name': 'popomore',
     'website': 'http://chuo.me',
@@ -13,6 +13,10 @@ navigation = [
     {'title': 'About', 'link': '/about/'},
     {'title': 'Archive', 'link': '/archive/'},
 ]
+
+reveal = {
+    'style': 'default'
+}
 
 show_author = False
 tagcloud = False
