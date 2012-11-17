@@ -5,7 +5,9 @@
 --------------------------
 
 
-[![](http://3.bp.blogspot.com/_ixQDXDmMsfA/SFaBQYvFlHI/AAAAAAAAAG0/oAK6Zc0imes/s320/f21b96449cafd54c510ffee5.jpg)](http://3.bp.blogspot.com/_ixQDXDmMsfA/SFaBQYvFlHI/AAAAAAAAAG0/oAK6Zc0imes/s1600-h/f21b96449cafd54c510ffee5.jpg)猟奇的な彼女 - 2008.4 - 数島健作 役
+![](../../uploads/blogger/f21b96449cafd54c510ffee5.jpg)
+
+猟奇的な彼女 - 2008.4 - 数島健作 役
 エジソンの母 - 2008.1 - 美浦博之 役
 モップガール - 2007.10 - 大友将太郎 役
 山おんな壁おんな - 2007.7 - 田村剛彦 役
