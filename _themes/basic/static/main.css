@@ -340,7 +340,8 @@ a,a:hover{color:#666;}
 
 /* 头部样式 */
 header{position: relative;width: 990px;margin: 0 auto;padding-bottom: 80px;}
-header .logo{position: absolute;left: 0;top: 24px;}
+header .logo{position: absolute;left: 0;top: 24px;font-size: 30px;text-decoration:none;line-height: 1;height: 40px;overflow:hidden;width:200px}
+header .logo:hover{width:auto;}
 header .rss{position: absolute;left: -30px;top: 12px;}
 header .back{position: absolute;top: 50px;font-size: 20px;}
 
