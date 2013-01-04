@@ -4,7 +4,7 @@
 
 --------------------------
 
-![image](../../uploads/2013/01/fejwiaof80242qffe.png)
+![image](../../uploads/2013/01/fejwiaof80242qff.png)
 
 [Trello](https://trello.com/) 是一个很神奇的工具，项目经理拿它作为项目管理的工具，SQA 拿它作为项目流程的工具，也有人用来作为对外宣传的入口，当然你也可以用来写博客。
 
