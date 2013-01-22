@@ -11,11 +11,11 @@
     {% else %}
     <link rel="alternate" type="application/rss+xml" href="{{content_url('feed.xml')}}" title="{{site.name}}" />
     {%- endif %}
-    <script src="https://a.alipayobjects.com/static/arale/seajs/1.2.1/sea.js" id="seajsnode"></script>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" id="seajsnode"></script>
     <script>
     seajs.config({
         alias: {
-            '$': 'jquery/1.7.2/jquery'
+            '$': 'gallery/jquery/1.7.2/jquery'
         }
     });
     </script>
@@ -65,14 +65,16 @@
     {% endblock -%}
 
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-5515443-4']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+      if (!/\d+\.\d+\.\d+\.\d+/g.test(location.hostname)) {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-5515443-4']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.' + 'google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      }
     </script>
 </body>
 </html>
