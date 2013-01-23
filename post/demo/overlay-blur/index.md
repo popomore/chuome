@@ -23,24 +23,66 @@ overlay
 </div>
 
 <script type="text/javascript">
-seajs.use(['$', 'arale/position/1.0.0/position'], function($, Position) {
+seajs.use(['$', 'arale/overlay/0.9.13/overlay'], function($, Overlay) {
   var input = $('#input'),
     console = $('#console'),
     overlay = $('#overlay');
+
+  var ol = Overlay.extend({
+    attrs: {
+      trigger: null,
+      v: 0
+    },
+
+    events: {
+      click: 'clickEvent',
+      mousedown: 'mousedownEvent'
+    },
+
+    clickEvent: function() {
+      log('input click');
+    },
+
+    setup: function() {
+      var that = this,
+        trigger = this.get('trigger');
+      trigger.focus(function() {
+        that.show();
+      });
+
+      this.set('align', {
+        selfXY: [0, 0],
+        baseElement: trigger,
+        baseXY: [0, '100%']
+      })
+    },
+
+    clickEvent: function() {
+      log('input click');
+      this.set('v', 1);
+    },
+
+    mousedownEvent: function() {
+      log('input mousedown');
+      this.set('v', 1);
+    },
+
+    onRenderV: function(val){
+      console.log(val)
+    }
+  });
+
   input.focus(function() {
-    Position.pin(overlay, {element:input, x: 0, y: '100%'});
-    overlay.show();
     log('input focus');
+    overlay.show();
   }).blur(function() {
     log('input blur');
   });
-  
-  overlay.click(function() {
-    log('overlay click');
-    overlay.hide();
-  }).mousedown(function() {
-    log('overlay mousedown');
-  });
+
+  new ol({
+    trigger: input,
+    element: overlay
+  })
   
   function log(txt) {
     $('<div>' + txt + '</div>').appendTo(console);
