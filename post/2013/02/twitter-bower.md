@@ -115,7 +115,7 @@ bower register project git://github.com/yourname/project
 
 name 和 version 描述包的名称和版本，dependencies 描述这个包依赖的其他包。main 指定包中的静态文件，可以为一个数组。
 
-除了包的配置文件，bower 还有一个全局的配置文件(~/bowerrc)。
+除了包的配置文件，bower 还有一个全局的配置文件(~/.bowerrc)。
 
 ```
 {
