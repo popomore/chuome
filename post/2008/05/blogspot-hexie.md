@@ -1,7 +1,7 @@
 # blogspot被和谐
 
 - pubdate: 2008-05-06
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # CJ
 
 - pubdate: 2008-07-17
-- public: false
+- status: secret
 
 --------------------------
 

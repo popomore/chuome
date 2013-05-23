@@ -1,7 +1,7 @@
 # 好人与坏人
 
 - pubdate: 2008-05-02
-- public: false
+- status: secret
 
 --------------------------
 

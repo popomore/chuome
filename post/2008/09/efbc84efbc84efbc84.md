@@ -1,7 +1,7 @@
 # ＄＄＄
 
 - pubdate: 2008-09-11
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # 三只小猫
 
 - pubdate: 2008-09-03
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # 还是有个妹妹好
 
 - pubdate: 2008-05-07
-- public: false
+- status: secret
 
 --------------------------
 

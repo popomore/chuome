@@ -1,7 +1,7 @@
 # 高中聚会
 
 - pubdate: 2008-05-18
-- public: false
+- status: secret
 
 --------------------------
 

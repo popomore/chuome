@@ -1,7 +1,7 @@
 # 两个字
 
 - pubdate: 2008-08-27
-- public: false
+- status: secret
 
 --------------------------
 

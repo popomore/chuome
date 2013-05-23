@@ -1,7 +1,7 @@
 # 奶绿
 
 - pubdate: 2008-06-25
-- public: false
+- status: secret
 
 --------------------------
 

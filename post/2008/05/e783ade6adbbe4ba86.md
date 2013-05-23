@@ -1,7 +1,7 @@
 # 热死了
 
 - pubdate: 2008-05-22
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # 猫咪你真是太可爱了
 
 - pubdate: 2008-09-16
-- public: false
+- status: secret
 
 --------------------------
 

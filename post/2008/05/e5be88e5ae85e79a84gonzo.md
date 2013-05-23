@@ -1,7 +1,7 @@
 # 很宅的GONZO
 
 - pubdate: 2008-05-24
-- public: false
+- status: secret
 
 --------------------------
 

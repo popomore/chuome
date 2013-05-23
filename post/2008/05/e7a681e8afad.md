@@ -1,7 +1,7 @@
 # 禁语
 
 - pubdate: 2008-05-03
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # ComiCon如期举办
 
 - pubdate: 2008-05-15
-- public: false
+- status: secret
 
 --------------------------
 

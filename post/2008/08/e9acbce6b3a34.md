@@ -1,7 +1,7 @@
 # 鬼泣4
 
 - pubdate: 2008-08-27
-- public: false
+- status: secret
 
 --------------------------
 

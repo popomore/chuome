@@ -1,7 +1,7 @@
 # 六级
 
 - pubdate: 2008-06-21
-- public: false
+- status: secret
 
 --------------------------
 

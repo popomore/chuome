@@ -1,7 +1,7 @@
 # 转啊转，转到外婆桥
 
 - pubdate: 2008-10-23
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # K歌
 
 - pubdate: 2008-06-01
-- public: false
+- status: secret
 
 --------------------------
 

@@ -1,7 +1,7 @@
 # 奥特曼？
 
 - pubdate: 2008-06-14
-- public: false
+- status: secret
 
 --------------------------
 

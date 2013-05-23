@@ -1,7 +1,7 @@
 # 双双过级
 
 - pubdate: 2008-08-29
-- public: false
+- status: secret
 
 --------------------------
 

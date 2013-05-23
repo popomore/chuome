@@ -1,7 +1,7 @@
 # 你是神作
 
 - pubdate: 2008-05-09
-- public: false
+- status: secret
 
 --------------------------
 

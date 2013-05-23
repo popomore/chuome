@@ -1,7 +1,7 @@
 # 奥运赛事
 
 - pubdate: 2008-08-08
-- public: false
+- status: secret
 
 --------------------------
 

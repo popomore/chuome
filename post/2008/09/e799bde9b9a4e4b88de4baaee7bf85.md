@@ -1,7 +1,7 @@
 # 白鹤不亮翅
 
 - pubdate: 2008-09-08
-- public: false
+- status: secret
 
 --------------------------
 

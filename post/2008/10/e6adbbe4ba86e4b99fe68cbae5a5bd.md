@@ -1,7 +1,7 @@
 # 死了也挺好
 
 - pubdate: 2008-10-06
-- public: false
+- status: secret
 
 --------------------------
 

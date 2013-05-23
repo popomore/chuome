@@ -1,7 +1,7 @@
 # 上海同人大会
 
 - pubdate: 2008-05-01
-- public: false
+- status: secret
 
 --------------------------
 

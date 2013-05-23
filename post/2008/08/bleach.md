@@ -1,7 +1,7 @@
 # BLEACH
 
 - pubdate: 2008-08-19
-- public: false
+- status: secret
 
 --------------------------
 
