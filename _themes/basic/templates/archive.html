@@ -2,32 +2,30 @@
 
 {% block main -%}
 <div class="container">
-    <ul class="posts">
-    {% set year = 0 -%}
+  <ul class="posts">
     {% for item in pagination.items %}
-        <li class="posts-item">
-            <span class="datetime">{{ item.pubdate | formatDate }}</span>
-            <a href="{{permalink_url(item)}}">{{item.title}}</a>
-        </li>
+    <li class="posts-item">
+      <span class="datetime">{{ item.pubdate | formatDate }}</span>
+      <a href="{{permalink_url(item)}}">{{item.title}}</a>
+    </li>
     {% endfor %}
-    </ul>
+  </ul>
 
-    {% if pagination.has_prev or pagination.has_next %}
-        <div id="nav-below" class="navigation">
-
-            {% if pagination.has_prev %}
-            <div class="nav-previous">
-                <a href="{{ pagination_url(pagination.prev_num) }}">Older posts <span class="meta-nav">→</span></a>
-            </div>
-            {% endif %}
-
-            {% if pagination.has_next %}
-            <div class="nav-next">
-                <a href="{{ pagination_url(pagination.next_num) }}"><span class="meta-nav">←</span>Newer posts </a>
-            </div>
-            {% endif %}
-        </div>
+  {% if pagination.has_prev or pagination.has_next %}
+  <div id="nav-below" class="navigation">
+    {% if pagination.has_prev %}
+    <div class="nav-previous">
+      <a href="{{ pagination_url(pagination.prev_num) }}">Older posts <span class="meta-nav">→</span></a>
+    </div>
     {% endif %}
+    {% if pagination.has_next %}
+    <div class="nav-next">
+      <a href="{{ pagination_url(pagination.next_num) }}"><span class="meta-nav">←</span>Newer posts </a>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
 </div>
 {%- endblock %}
 
