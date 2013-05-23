@@ -1,6 +1,6 @@
 # markdown 写 ppt
 
-- date: 2012-11-01
+- pubdate: 2012-11-01
 
 ---
 
@@ -16,7 +16,7 @@
 
     # Example for liquidluck theme reveal
     
-    - date: 2012-11-01
+    - pubdate: 2012-11-01
     
     ---
     
