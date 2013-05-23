@@ -12,7 +12,8 @@
     "nico.PageWriter",
     "nico.FileWriter",
     "nico.StaticWriter",
-    "nico.ArchiveWriter"
+    "nico.ArchiveWriter",
+    "nico.FeedWriter"
   ],
   "archive_output": "archive/index.html",
   "perpage": 30

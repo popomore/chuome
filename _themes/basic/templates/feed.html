@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ config.site.name }}</title>
+    <link href="{{config.site.url}}/feed.xml" rel="self" />
+    <link href="{{config.site.url}}" />
+    <updated>2013-05-23T13:43:56+08:00</updated>
+    <id>{{ config.site.url }}</id>
+    {% for post in feed.posts -%}
+    <entry>
+        <title type="html"><![CDATA[{{ post.title }}]]></title>
+        {%- set permalink = permalink_url(post) %}
+        <link href="{{ content_url(config.site.url, permalink) }}"/>
+        <published>{{ post.pubdate|xmldatetime }}</published>
+        <updated>{{ post.pubdate|xmldatetime }}</updated>
+        <id>{{ content_url(config.site.url, permalink) }}</id>
+        <content type="html" xml:base="{{ config.site.url }}" xml:lang="en">
+            <![CDATA[ {{ post.html }}]]>
+        </content>
+    </entry>
+    {%- endfor %}
+</feed>
