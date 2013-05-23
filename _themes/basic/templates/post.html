@@ -6,6 +6,7 @@
 <div class="container">
   <article class="markdown">
   <h1>{{ post.title }}</h1>
+  <span class="datetime">{{ post.pubdate | formatDate }}</span>
   {{ post.html }}
   {%- include "snippet/disqus.html" %}
   </article>
