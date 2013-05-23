@@ -6,8 +6,8 @@
     {% set year = 0 -%}
     {% for item in pagination.items %}
         <li class="posts-item">
-            <span class="datetime">{{ item.date.strftime('%Y-%m-%d') }}</span>
-            <a href="{{item|permalink}}">{{item.title}}</a>
+            <span class="datetime">{{ item.pubdate | formatDate }}</span>
+            <a href="{{permalink_url(item)}}">{{item.title}}</a>
         </li>
     {% endfor %}
     </ul>

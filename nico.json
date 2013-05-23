@@ -1,0 +1,19 @@
+{
+  "site": {
+    "name": "不要变笨",
+    "url": "http://chuo.me"
+  },
+  "source": "post",
+  "output": "_site",
+  "theme": "_themes/basic",
+  "permalink": "{{pubdate.year}}/{{pubdate.month}}/{{filename}}.html",
+  "writers": [
+    "nico.PostWriter",
+    "nico.PageWriter",
+    "nico.FileWriter",
+    "nico.StaticWriter",
+    "nico.ArchiveWriter"
+  ],
+  "archive_output": "archive/index.html",
+  "perpage": 30
+}

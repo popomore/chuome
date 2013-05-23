@@ -4,7 +4,7 @@
 <div class="container">
     <article class="markdown">
     <h1>{{ post.title }}</h1>
-    {{ post.content }}
+    {{ post.html }}
 
     {% if theme.disqus -%}
     {%- if theme.allow_comment_on_secret_post or post.public %}

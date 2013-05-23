@@ -6,11 +6,9 @@
 <div class="container">
     <article class="markdown">
     <h1>{{ post.title }}</h1>
-    <span class="datetime">{{ post.date.strftime('%Y-%m-%d') }}</span>
-    {{ post.content|wiki_link }}
+    <span class="datetime">{{ post.pubdate | formatDate}}</span>
+    {{ post.html }}
 
-    {% if theme.disqus -%}
-    {%- if theme.allow_comment_on_secret_post or post.public %}
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = '{{theme.disqus}}';
@@ -21,8 +19,6 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
-    {% endif -%}
-    {%- endif %}
     </article>
 </div>
 {%- endblock %}
