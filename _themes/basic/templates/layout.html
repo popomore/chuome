@@ -2,8 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="keywords" content="" />
+  <meta name="keywords" content="{% block keywords %}{% endblock %}" />
   <meta name="description" content="{% block description %}{% endblock %}" />
+  <meta name="generator" content="{{system.name}} {{system.version}}" />
   <title>{% block title %}{{config.site.name}}{% endblock %}</title>
   <link rel="stylesheet" href="{{static_url('main.css')}}" type="text/css" media="screen" charset="utf-8" />
   <link rel="alternate" type="application/rss+xml" href="{{content_url('feed.xml')}}" title="{{config.site.name}}" />
