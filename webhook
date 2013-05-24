@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var gith = require('gith').create(9001);
+var spawn = require('child_process').spawn;
+var build = require('nico').build;
+
+gith({
+  repo: 'popomore/chuome',
+  branch: 'nico'
+}).on('all', function(payload) {
+  console.log('=======      git pull       =======');
+  var pull = spawn('git', ['pull', 'origin', 'nico'], {cwd: __dirname, stdio: 'inherit'});
+  pull.on('close', function(code) {
+    if (code === 0) {
+      console.log('=======  git pull success   =======');
+      build({});
+      console.log('======= nico build complete =======');
+      console.log('======= ' + new Date().toString() + ' =======');
+    } else {
+      console.log('=======   git pull failed   =======');
+      console.log('======= ' + new Date().toString() + ' =======');
+    }
+  });
+});
+
+// test
+//var obj = { "after": "c188305c5ceb3a0bb3921fee65320bb1b97a8013", "before": "6115bbc6b55698d395f5acdeea8e85aabab244ac", "commits": [ { "added": [], "author": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "committer": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "distinct": true, "id": "b3013bdeccfbe90fb017a7513dbe4c337d49e600", "message": "update", "modified": [ "package.json" ], "removed": [], "timestamp": "2013-05-07T02:30:34-07:00", "url": "https://github.com/popomore/test/commit/b3013bdeccfbe90fb017a7513dbe4c337d49e600" }, { "added": [], "author": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "committer": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "distinct": true, "id": "4c6eca29380f88a854dbf97dbfc13a5d27217563", "message": "bump 1.0.0", "modified": [ "package.json" ], "removed": [], "timestamp": "2013-05-07T02:38:55-07:00", "url": "https://github.com/popomore/test/commit/4c6eca29380f88a854dbf97dbfc13a5d27217563" }, { "added": [], "author": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "committer": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "distinct": true, "id": "c188305c5ceb3a0bb3921fee65320bb1b97a8013", "message": "change", "modified": [ "package.json" ], "removed": [], "timestamp": "2013-05-07T02:40:11-07:00", "url": "https://github.com/popomore/test/commit/c188305c5ceb3a0bb3921fee65320bb1b97a8013" } ], "compare": "https://github.com/popomore/test/compare/6115bbc6b556...c188305c5ceb", "created": false, "deleted": false, "forced": false, "head_commit": { "added": [], "author": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "committer": { "email": "sakura9515@gmail.com", "name": "popomore", "username": "popomore" }, "distinct": true, "id": "c188305c5ceb3a0bb3921fee65320bb1b97a8013", "message": "change", "modified": [ "package.json" ], "removed": [], "timestamp": "2013-05-07T02:40:11-07:00", "url": "https://github.com/popomore/test/commit/c188305c5ceb3a0bb3921fee65320bb1b97a8013" }, "pusher": { "name": "none" }, "ref": "refs/heads/master", "repository": { "created_at": 1367895256, "description": "", "fork": false, "forks": 0, "has_downloads": true, "has_issues": true, "has_wiki": true, "id": 9902624, "language": "JavaScript", "master_branch": "master", "name": "test", "open_issues": 0, "owner": { "email": "sakura9515@gmail.com", "name": "popomore" }, "private": false, "pushed_at": 1368176687, "size": 208, "stargazers": 0, "url": "https://github.com/popomore/test", "watchers": 0 } };
+//gith.payload(obj);

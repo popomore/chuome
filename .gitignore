@@ -1,3 +1,4 @@
 _site
 .swp
 .cache
+node_modules
