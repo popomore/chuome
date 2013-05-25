@@ -15,12 +15,12 @@
   <div id="nav-below" class="navigation">
     {% if pagination.has_prev %}
     <div class="nav-previous">
-      <a href="{{ pagination_url(pagination.prev_num) }}">Older posts <span class="meta-nav">→</span></a>
+      <a href="{{ pagination_url(pagination.prev_num) }}"><span class="meta-nav">←</span> Newer posts</a>
     </div>
     {% endif %}
     {% if pagination.has_next %}
     <div class="nav-next">
-      <a href="{{ pagination_url(pagination.next_num) }}"><span class="meta-nav">←</span>Newer posts </a>
+      <a href="{{ pagination_url(pagination.next_num) }}">Older posts <span class="meta-nav">→</span></a>
     </div>
     {% endif %}
   </div>

@@ -385,6 +385,7 @@ margin: 0 auto -24px;}
 .container .post{margin-bottom:80px;}
 .container .post-hr{margin-bottom:80px;border: 1px solid #BBB;}
 
-.navigation{font-family:'Courier New';font-size:30px;color:#3a3a3a;text-align:center;}
+.navigation{font-family:'Courier New';font-size:30px;color:#3a3a3a;text-align:center;padding-top: 20px;}
 .navigation a{color:#3a3a3a;text-decoration:none;}
 .navigation .nav-previous{margin-right:50px;}
+.navigation .nav-next{margin-left:50px;}
