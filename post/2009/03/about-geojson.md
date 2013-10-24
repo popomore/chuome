@@ -9,53 +9,62 @@
 
 那么我就来讨论下GeoJSON吧，先来看个例子
 
-
-{ "type": "FeatureCollection",
-"features": [
-{ "type": "Feature",
-"geometry": {
-        "type": "Point",
-        "coordinates": [102.0, 0.5]
-      },
-"properties": {"prop0": "value0"}
-},
-{ "type": "Feature",
-"geometry": {
-"type": "LineString",
-"coordinates": [
-[102.0, 0.0], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
-]
-},
-"properties": {
-"prop0": "value0",
-"prop1": 0.0
+```
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "geometry": {    
+      "type": "Point",
+          "coordinates": [102.0, 0.5]   
+    },
+    "properties": {
+      "prop0": "value0"
+    }
+  }, {
+    "type": "Feature",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [102.0, 0.0],
+        [103.0, 1.0],
+        [104.0, 0.0],
+        [105.0, 1.0]
+      ]
+    },
+    "properties": {
+      "prop0": "value0",
+      "prop1": 0.0
+    }
+  }, {
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [100.0, 0.0],
+          [101.0, 0.0],
+          [101.0, 1.0],
+          [100.0, 1.0],
+          [100.0, 0.0]
+        ]
+      ]
+    },
+    "properties": {
+      "prop0": "value0",
+      "prop1": {
+        "this": "that"
+      }
+    }
+  }]
 }
-},
-{ "type": "Feature",
-"geometry": {
-"type": "Polygon",
-"coordinates": [
-[ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
-[100.0, 1.0], [100.0, 0.0] ]
-]
-},
-"properties": {
-"prop0": "value0",
-"prop1": {"this": "that"}
-}
-}
-]
-}
-
+```
 
 JSON是源于javascript对象，javascript对象（Object）就是用大括号括起来，中间以键/值的形式表现并用逗号分割，“键”就是对象的属性，而“值”就是该属性的值。javascript中还有个数组（Array），用中括号括起来，中间只有单个的值并用逗号分割。不管是对象还是数组，其中的值可以是任何元素（对象，数组，字符串，数字等），这就是此中结构的灵活之处。JSON与XML很相似，也具有层次结构，是一种轻量级的解决方案。
 
 GeoJSON保留了JSON的结构，但增加了一些约束条件。
 
-
-
-
-1. GeoJSON总是由一个对象组成，这个对象可以为要素集合（featurecollectioni），要素（feature）或者几何体（ geometry）。
+1. GeoJSON总是由一个对象组成，这个对象可以为要素集合（featurecollection），要素（feature）或者几何体（ geometry）。
 
 
 2. GeoJSON对象**必须**包含一个type属性，type的值可为 "Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection", "Feature", or "FeatureCollection"。
@@ -78,34 +87,32 @@ GeoJSON保留了JSON的结构，但增加了一些约束条件。
 
 1. **点**，表示点只需要经度和纬度，用中括号括起来代表一个点坐标。
 
-
-{ "type": "Point", "coordinates": [100.0, 0.0] }
-
-
-
-
+	```
+	{ "type": "Point", "coordinates": [100.0, 0.0] }
+	```
 
 2. **线**，由一系列点组成，在一组有序点外面再括一个中括号。
 
-
-{ "type": "LineString", "coordinates": [ [100.0, 0.0], [101.0, 1.0] ] }
-
-
-
-
+	```
+	{ "type": "LineString", "coordinates": [ [100.0, 0.0], [101.0, 1.0] ] }
+	```
 
 3. **面**，在线的外面再加一个中括号，面列表中的线收尾必须一致。但为什么未免还要加个呢？为了表示面中的洞，第一项表示外围的圈，第二项（如果有的话）表示内围的圈。
 
-
-{ "type": "Polygon",
-"coordinates": [
-[ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0] ]
-]
-}
-
-
-
-
+    ```
+    {
+  	  "type": "Polygon",
+      "coordinates": [
+        [
+          [100.0, 0.0],
+          [101.0, 0.0],
+          [101.0, 1.0],
+          [100.0, 1.0],
+          [100.0, 0.0]
+        ]
+      ]
+    }
+    ```
 
 4. 除了以上还有多点，多线，多面就不多讲了，可以[自己去看看](http://geojson.org/geojson-spec.html)。
 
@@ -114,10 +121,11 @@ GeoJSON基本上就这些内容，跟详细的可以去[这里](http://geojson.o
 
 一个OpenLayers的[简单例子](http://openlayers.org/dev/examples/vector-formats.html)：
 
-
+```
 //初始化map
 var featurecollection = 'geojson对象';
 var geojson = new OpenLayers.Format.GeoJSON(); //获得一个geojson的模板
 var layer = new OpenLayers.Layer.Vector();
 layer.addFeatures(geojson.read(featurecollection)); //用模板来解析这个geojson对象
 map.addLayer(layer);
+```
