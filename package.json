@@ -11,5 +11,8 @@
     "url": "git://github.com/popomore/chuome.git"
   },
   "author": "popomore <sakura9515@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "nico build"
+  }
 }
