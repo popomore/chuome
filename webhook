@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
-var path = require('path');
+'use strict';
+
 var gith = require('gith').create(9001);
 var spawn = require('child_process').spawn;
 var build = require('nico').build;
 
+build({});
+
 gith({
   repo: 'popomore/chuome',
   branch: 'master'
-}).on('all', function(payload) {
+}).on('all', function() {
   console.log('=======      git pull       =======');
   var pull = spawn('git', ['pull', 'origin', 'master'], {cwd: __dirname, stdio: 'inherit'});
   pull.on('close', function(code) {

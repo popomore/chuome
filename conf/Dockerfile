@@ -26,7 +26,6 @@ RUN iojs -v
 RUN git clone https://github.com/popomore/chuome.git ~/site
 WORKDIR /root/site
 RUN npm install
-RUN npm run build
 
 RUN mkdir /root/log
 RUN mkdir /root/conf
