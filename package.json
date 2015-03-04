@@ -13,6 +13,7 @@
   "author": "popomore <sakura9515@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "nico build"
+    "build": "nico build",
+    "server": "nico server"
   }
 }
